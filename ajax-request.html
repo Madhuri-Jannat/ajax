@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-4.0.0.min.js"></script>
+</head>
+<body>
+   <input type="text" id="name">
+   <button id="btn">submit</button>
+
+   <script>
+    $('#btn').click(function(){ 
+ uname = $('#name').val()
+
+$.ajax({ 
+    url:"store.php",
+    type:"POST",
+    data:{ 
+        name:uname
+    },
+    success:function(response){ 
+        console.log(response)
+    }
+})
+
+    })
+   </script>
+</body>
+</html>
